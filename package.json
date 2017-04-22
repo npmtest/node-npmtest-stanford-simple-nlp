@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-stanford-simple-nlp",     "homepage": "https://github.com/npmtest/node-npmtest-stanford-simple-nlp",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-stanford-simple-nlp.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  stanford-simple-nlp (v0.2.2)  [![npm package](https://img.shields.io/npm/v/npmtest-stanford-simple-nlp.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-stanford-simple-nlp) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-stanford-simple-nlp.svg)](https://travis-ci.org/npmtest/node-npmtest-stanford-simple-nlp)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-stanford-simple-nlp",
+    "keywords": [
+        "coverage",
+        "test",
+        "stanford-simple-nlp"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_stanford_simple_nlp.js",
+    "name": "npmtest-stanford-simple-nlp",
+    "nameAlias": "npmtest_stanford_simple_nlp",
+    "nameOriginal": "npmtest-stanford-simple-nlp",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-stanford-simple-nlp.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
